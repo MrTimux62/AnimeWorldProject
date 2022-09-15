@@ -243,6 +243,21 @@ button:hover {
     opacity: 0.8;
 }
 
+.fav_anime {
+    position: absolute;
+    max-height: 45px;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    transition: all 500ms;
+    z-index: 1;
+}
+
+.fav_anime:hover {
+    transform: scale(1.2);
+    transition: all 500ms;
+}
+
 @media (max-width: 1250px) {
     header {
         font-size: 110%;

@@ -1,4 +1,4 @@
-import { loadCitation, searchList } from "./searchApi.js";
+import { loadCitation, searchList, searchFav } from "./searchApi.js";
 import { loadSelect } from "./reactionApi.js";
 import { loadFact } from "./factApi.js";
 
@@ -52,3 +52,11 @@ if (document.getElementById("search_list_button") != null) {
     
 }
 
+/**
+ * Afficher Fav Button
+ */
+if (document.getElementById("search_fav") != null) {
+    document.getElementById("search_fav").addEventListener("click", function (e) {
+        searchFav()
+    });
+}

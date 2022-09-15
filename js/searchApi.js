@@ -5,31 +5,70 @@ let liste_anime = []
 let anime_mystere;
 let nb_citation = 1;
 
+export async function searchFav() {
+    if (localStorage.getItem("anime_fav") != null) {
+        document.getElementById("liste_anime").innerHTML = "";
+        let anime_array = localStorage.getItem("anime_fav").split(",")
+    }
+}
+
 /**
  * Recherche un anime par nom
  * @param {String} search_word 
  */
 export async function searchList(search_word) {
-
     document.getElementById("liste_anime").style.display = "";
     document.getElementById("presentation").style.display = "none";
     document.getElementById("liste_anime").innerHTML = "";
     const response = await fetch('https://api.jikan.moe/v4/anime?q=' + search_word);
     const animes = await response.json();
     document.getElementById("info").style.display = "none"
-    document.getElementById("liste_anime").innerHTML = ""
     animes.data.forEach(element => {
         liste_anime.push(new Anime(element.mal_id, element.title, element.images.jpg.image_url, element.trailer.embed_url, element.synopsis, element.episodes, element.score, element.url))
-        let html = `<div class="anime_div" id="${element.mal_id}")">
-        <img src="${element.images.jpg.image_url}" alt="img">
-        <h4 translate="no">${element.title}</h4>
-    </div>`
+        let html = `<div style="position: relative;">
+            <img src="${localStorage.getItem(element.title) != null ? "./img/fav_on.png" : "./img/fav_off.png"}" class="fav_anime" id="${element.title}">
+            <div class="anime_div" id="${element.mal_id}")">
+            <img src="${element.images.jpg.image_url}" alt="img">
+            <h4 translate="no">${element.title}</h4>
+            </div>
+        </div>`
         document.getElementById("liste_anime").insertAdjacentHTML("beforeend", html)
     });
     // ajout des EventListener
     Array.from(document.getElementsByClassName("anime_div")).forEach(function (element) {
         element.addEventListener('click', function (e) {
             showInfoPresentation(e.path[1].id);
+        });
+    });
+    Array.from(document.getElementsByClassName("fav_anime")).forEach(function (element) { // Partie Favoris
+        element.addEventListener('click', function (e) {
+            if (e.path[0].src.includes("fav_off.png")) {
+                if (localStorage.getItem("anime_fav") == null) {
+                    let array_anime;
+                    liste_anime.forEach(element => {
+                        if (element.title == e.path[0].id) {
+                            array_anime = element
+                        }
+                    });
+                    localStorage.setItem("anime_fav", array_anime)
+                } else {
+                    let array_anime = localStorage.getItem("anime_fav").split(",")
+                    array_anime.push(e.path[0].id)
+                    localStorage.setItem("anime_fav", array_anime)
+                }
+                localStorage.setItem(e.path[0].id, "fav")
+                e.path[0].src = "./img/fav_on.png"
+            } else {
+                localStorage.removeItem(e.path[0].id)
+                let array_anime = localStorage.getItem("anime_fav").split(",")
+                let index = array_anime.indexOf(e.path[0].id);
+                if (index !== -1) {
+                    array_anime.splice(index, 1)
+                    localStorage.setItem("anime_fav", array_anime)
+                }
+                e.path[0].src = "./img/fav_off.png"
+            }
+
         });
     });
 }
