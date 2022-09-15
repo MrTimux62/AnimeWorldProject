@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <title>Anime World</title>
+</head>
+
+<body id="body">
+    <header>
+        <a href="./"><img src="./img/logo.png" alt="logo"></a>
+        <span> <a href="./search_anime"><i>Rechercher un Anime</i></a> <a href=""><i>Trouve la citation</i></a> <a
+                href="./reaction_anime"><i>Reaction Anime</i></a> <a href="./fact_anime"><i>Fact Anime</i></a> </span>
+    </header>
+    <main>
+        <h2>Découvrez des milliers de citations provenant de centaines d'anime !</h2>
+        <span id="presentation_mystere">
+            <a href=""><button id="retour">Rejouer</button></a>
+            <div class="anime_div" id="1">
+                <img src="./img/inconnu.jpg" alt="img" id="anime_img">
+                <h4>Anime Mystère</h4>
+            </div>
+            <div id="right_index_mystere">
+                <div>
+                    <h4>Première citation : </h4><i id="citation_1"></i>
+                </div>
+                <div style="display: none;" id="citation_2_div">
+                    <h4>Deuxième citation : </h4><i id="citation_2"></i>
+                </div>
+                <div style="display: none;" id="citation_3_div">
+                    <h4>Troisième citation : </h4><i id="citation_3"></i>
+                </div>
+                <div style="display: none;" id="citation_4_div">
+                    <h4>Quatrième citation : </h4><i id="citation_4"></i>
+                </div>
+                <div style="display: none;" id="citation_5_div">
+                    <h4>Cinquième citation : </h4><i id="citation_5"></i>
+                </div>
+                <span><button id="more_citation">Plus de citation</button> <button id="abandon">Abandonner</button> <input type="text" placeholder="Nom de l'anime"
+                        id="name_anime"> <button id="valid_answer">Valider</button></span>
+
+                <div id="fait">
+
+                </div>
+            </div>
+        </span>
+        <span id="presentation" style="display: none;">
+            <a href=""><button id="retour">Retour</button></a>
+            <div class="anime_div_presentation">
+                <img src="img/star_5.png" alt="star" id="star">
+                <img src="https://m.media-amazon.com/images/M/MV5BZjE0YjVjODQtZGY2NS00MDcyLThhMDAtZGQwMTZiOWNmNjRiXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg"
+                    alt="img" id="img_anime">
+                <h4 id="anime_name" translate="no">bleach</h4>
+                <a href="" id="anime_url" target="_blank">Fiche détaillé ici</a>
+            </div>
+            <h3 id="result_game" style="color: red">Dommage !</h3>
+            <div id="right_index">
+
+            </div>
+        </span>
+    </main>
+
+    <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>

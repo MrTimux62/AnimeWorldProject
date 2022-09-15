@@ -1,0 +1,262 @@
+@font-face {
+    font-family: AnimeFont;
+    src: url(font/NinjaNaruto-YOn4.ttf);
+}
+
+@font-face {
+    font-family: AnimeFontSmall;
+    src: url(font/KeroKero-51BBx.ttf);
+}
+
+main {
+    font-family: cursive;
+    text-align: center;
+    margin-top: 70px;
+}
+
+main a {
+    font-family: AnimeFontSmall;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+    background-color: #03224c;
+    color: white;
+}
+
+header {
+    font-family: AnimeFont;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 2px 3px white;
+    min-height: 55px;
+    display: flex;
+    justify-content: right;
+    font-size: 150%;
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: all 500ms;
+}
+
+header span {
+    align-self: center;
+    margin-right: 30px;
+    margin-left: 70px;
+    text-align: center;
+    line-height: 20px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 2vw;
+}
+
+header i {
+    padding: 8px;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+header i:hover {
+    transition: all 200ms;
+    font-size: 110%;
+}
+
+header img {
+    max-height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#index_link {
+    margin-top: 50px;
+}
+
+.anime_div, .anime_div_presentation {
+    font-family: AnimeFont;
+    text-align: center;
+    box-shadow: 0px 2px 3px white;
+    border-radius: 15px;
+    max-height: 365px;
+    min-width: 230px;
+    max-width: 230px;
+    transition: all 500ms;
+    cursor: pointer;
+    height: fit-content;
+    position: relative;
+    /*overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.anime_div:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px white;
+    transition: all 500ms;
+}
+
+.anime_div img, .anime_div_presentation img {
+    height: 320px;
+    border-radius: 15px;
+}
+
+.anime_div h4, .anime_div_presentation h4 {
+    font-size: 85%;
+    margin: 8px 5px;
+    font-family: system-ui;
+}
+
+#liste_anime {
+    display: flex;
+    gap: 3vh 10vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5vh 5vw;
+}
+
+#presentation, #presentation_mystere {
+    display: flex;
+    margin: 9vh 3vw 0 3vw;
+}
+
+main a {
+    font-size: 250%;
+    color: white;
+    padding: 10px;
+}
+
+#right_index, #right_index_mystere {
+    margin: 0 2vw;
+    text-align: left;
+    margin-top: -13px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+#right_index p, #right_index_mystere p {
+    line-height: 30px;
+}
+
+#search_anime, #name_anime {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px;
+    margin: 10px;
+    width: 20vw;
+}
+
+main button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+#anime_video {
+    text-align: right;
+}
+
+#anime_video iframe {
+    border-radius: 15px;
+    border: 2px solid white;
+}
+
+#retour {
+    position: absolute;
+    right: 5vw;
+    font-family: cursive;
+    border-radius: 5px;
+    transition: all 500ms;
+}
+
+button:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    transition: all 500ms;
+}
+
+#star {
+    max-width: 150px;
+    position: absolute;
+    height: 45px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: -8%;
+}
+
+#anime_url {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 110%;
+    width: 150px;
+    left: 50%;
+    bottom: -17%;
+    font-family: cursive;
+}
+
+#select_react {
+    width: 15vw;
+    height: 26px;
+    font-family: monospace;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+#select_react option {
+    color: black;
+}
+
+#anime_react {
+    margin-top: 25px;
+}
+
+#h2_react {
+    margin-bottom: 15vh;
+}
+
+#anime_react img {
+    height: 40vh;
+    border-radius: 10px;
+}
+
+#result_game {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 65%;
+    font-size: 144%;
+    opacity: 0.8;
+}
+
+@media (max-width: 1250px) {
+    header {
+        font-size: 110%;
+    }
+}
+
+@media (max-width: 1000px) {
+    header {
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        font-size: 70%;
+    }
+}
