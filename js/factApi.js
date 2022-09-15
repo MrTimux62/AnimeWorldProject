@@ -1,14 +1,4 @@
-
-/**
- * Anime Fact class
- */
- class Anime_fact {
-    constructor(id, name, img_url) {
-        this.id = id
-        this.name = name
-        this.img_url = img_url
-    }
-}
+import { Anime_fact } from "../model/factModel.js";
 
 let liste_anime_fact = []
 
