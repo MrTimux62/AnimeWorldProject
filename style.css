@@ -274,4 +274,7 @@ button:hover {
     header {
         font-size: 70%;
     }
+    #right_index, #right_index_mystere {
+        margin-top: 15px;
+    }
 }
