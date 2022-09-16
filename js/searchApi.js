@@ -25,7 +25,7 @@ export async function searchList(search_word) {
     document.getElementById("info").style.display = "none"
     animes.data.forEach(element => {
         liste_anime.push(new Anime(element.mal_id, element.title, element.images.jpg.image_url, element.trailer.embed_url, element.synopsis, element.episodes, element.score, element.url))
-        let html = `<div style="position: relative;">
+        let html = `<div class="anime_main">
             <img src="${localStorage.getItem(element.title) != null ? "./img/fav_on.png" : "./img/fav_off.png"}" class="fav_anime" id="${element.title}">
             <div class="anime_div" id="${element.mal_id}")">
             <img src="${element.images.jpg.image_url}" alt="img">

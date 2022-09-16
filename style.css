@@ -258,6 +258,10 @@ button:hover {
     transition: all 500ms;
 }
 
+.anime_main {
+    position: relative;
+}
+
 @media (max-width: 1250px) {
     header {
         font-size: 110%;
